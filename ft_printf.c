@@ -59,7 +59,6 @@ int	ft_printf(const char *format, ...)
 		else
 		{
 			ft_putchar(format[i], &count);
-			count++;
 		}
 		i++;
 	}

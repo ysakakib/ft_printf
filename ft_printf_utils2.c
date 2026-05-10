@@ -6,7 +6,7 @@
 /*   By: yusakaki <yusakaki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 17:14:32 by yusakaki          #+#    #+#             */
-/*   Updated: 2026/05/11 00:05:12 by yusakaki         ###   ########.fr       */
+/*   Updated: 2026/05/11 00:25:57 by yusakaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static void	ft_putptr_hex(unsigned long long n, int *count)
 	hex_base = "0123456789abcdef";
 	if (n >= 16)
 		ft_putptr_hex(n / 16, count);
+	if (*count == -1)
+		return ;
 	ft_putchar(hex_base[n % 16], count);
 }
 
