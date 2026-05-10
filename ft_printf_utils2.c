@@ -6,26 +6,42 @@
 /*   By: yusakaki <yusakaki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 17:14:32 by yusakaki          #+#    #+#             */
-/*   Updated: 2026/05/10 18:41:20 by yusakaki         ###   ########.fr       */
+/*   Updated: 2026/05/10 21:55:18 by yusakaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_putptr_rec(unsigned long addr, int *count)
+void	ft_puthex(unsigned int nb, int uppercase, int *count)
 {
-	if (addr >= 16)
-		ft_putptr_rec(addr / 16, count);
-	*count += ft_putchar("0123456789abcdef"[addr % 16]);
+	char	*hex_base;
+
+	if (*count == -1)
+		return ;
+	if (uppercase)
+		hex_base = "0123456789ABCDEF";
+	else
+		hex_base = "0123456789abcdef";
+	if (nb >= 16)
+		ft_puthex(nb / 16, uppercase, count);
+	if (*count == -1)
+		return ;
+	ft_putchar(hex_base[nb % 16], count);
 }
 
-void	ft_putptr(void *ptr, int *count)
+void	ft_puthex(unsigned int nb, int uppercase, int *count)
 {
-	if (!ptr)
-	{
-		*count += write(1, "(nil)", 5);
+	char	*hex_base;
+
+	if (*count == -1)
 		return ;
-	}
-	*count += write(1, "0x", 2);
-	ft_putptr_rec((unsigned long)ptr, count);
+	if (uppercase)
+		hex_base = "0123456789ABCDEF";
+	else
+		hex_base = "0123456789abcdef";
+	if (nb >= 16)
+		ft_puthex(nb / 16, uppercase, count);
+	if (*count == -1)
+		return ;
+	ft_putchar(hex_base[nb % 16], count);
 }

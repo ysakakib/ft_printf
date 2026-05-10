@@ -6,7 +6,7 @@
 /*   By: yusakaki <yusakaki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 18:44:35 by yusakaki          #+#    #+#             */
-/*   Updated: 2026/05/10 18:44:46 by yusakaki         ###   ########.fr       */
+/*   Updated: 2026/05/10 21:57:20 by yusakaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ int	main(void)
 	printf("--- Null String Test ---\n");
 	a = ft_printf("Mine: %s\n", NULL);
 	b = printf("Real: %s\n", (char *)NULL);
-	printf("Count -> Mine: %d, Real: %d\n\n", a, b);
 	return (0);
 }

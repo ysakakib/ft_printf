@@ -6,7 +6,7 @@
 /*   By: yusakaki <yusakaki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 18:45:58 by yusakaki          #+#    #+#             */
-/*   Updated: 2026/05/10 18:46:00 by yusakaki         ###   ########.fr       */
+/*   Updated: 2026/05/10 21:42:25 by yusakaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 int		ft_printf(const char *format, ...);
 
-int		ft_putchar(char c);
+int		ft_putchar(char c, int *count);
 void	ft_putstr(const char *str, int *count);
 void	ft_putnbr(int nb, int *count);
 void	ft_putunbr(unsigned int nb, int *count);

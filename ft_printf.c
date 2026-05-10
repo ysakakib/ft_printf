@@ -6,7 +6,7 @@
 /*   By: yusakaki <yusakaki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 23:59:40 by yusakaki          #+#    #+#             */
-/*   Updated: 2026/05/10 19:32:17 by yusakaki         ###   ########.fr       */
+/*   Updated: 2026/05/10 21:56:48 by yusakaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	process_conversion(const char *format, int *i, va_list *args,
 		return (handle_percent(count));
 	else
 	{
-		*count += ft_putchar('%');
+		*count += ft_putchar('%', count);
 		(*i)--;
 	}
 }
@@ -53,10 +53,12 @@ int	ft_printf(const char *format, ...)
 	while (format[i])
 	{
 		if (format[i] == '%')
+		{
 			process_conversion(format, &i, &args, &count);
+		}
 		else
 		{
-			ft_putchar(format[i]);
+			ft_putchar(format[i], &count);
 			count++;
 		}
 		i++;
