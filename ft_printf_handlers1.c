@@ -6,7 +6,7 @@
 /*   By: yusakaki <yusakaki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 23:59:17 by yusakaki          #+#    #+#             */
-/*   Updated: 2026/05/10 18:48:17 by yusakaki         ###   ########.fr       */
+/*   Updated: 2026/05/10 23:50:27 by yusakaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	handle_char(va_list *args, int *count)
 {
-	*count += ft_putchar(va_arg(*args, int));
+	ft_putchar(va_arg(*args, int), count);
 }
 
 void	handle_string(va_list *args, int *count)
