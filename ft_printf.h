@@ -6,7 +6,7 @@
 /*   By: yusakaki <yusakaki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 18:45:58 by yusakaki          #+#    #+#             */
-/*   Updated: 2026/05/12 16:07:34 by yusakaki         ###   ########.fr       */
+/*   Updated: 2026/05/12 22:33:33 by yusakaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_putchar(char c, int *count);
 void	ft_putstr(const char *str, int *count);
 void	ft_putnbr(int nb, int *count);
 void	ft_putunbr(unsigned int nb, int *count);
-void	ft_puthex(unsigned long long nb, int uppercase, int *count);
+void	ft_puthex(unsigned int nb, int uppercase, int *count);
 void	ft_putptr(void *ptr, int *count);
 
 void	handle_char(va_list *args, int *count);

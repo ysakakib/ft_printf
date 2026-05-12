@@ -24,7 +24,7 @@ void	handle_hex_lower(va_list *args, int *count)
 
 void	handle_hex_upper(va_list *args, int *count)
 {
-	ft_puthex(va_arg(*args, unsigned long long int), 1, count);
+	ft_puthex(va_arg(*args, unsigned int), 1, count);
 }
 
 void	handle_percent(int *count)

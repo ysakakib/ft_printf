@@ -6,27 +6,24 @@
 /*   By: yusakaki <yusakaki@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/10 17:14:32 by yusakaki          #+#    #+#             */
-/*   Updated: 2026/05/12 15:46:27 by yusakaki         ###   ########.fr       */
+/*   Updated: 2026/05/12 22:54:13 by yusakaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_puthex(unsigned long long nb, int uppercase, int *count)
+void	ft_putptr_hex(unsigned long long nb, int *count)
 {
-	char	*hex_base;
+	char	*base;
 
 	if (*count == -1)
 		return ;
-	if (uppercase)
-		hex_base = "0123456789ABCDEF";
-	else
-		hex_base = "0123456789abcdef";
+	base = "0123456789abcdef";
 	if (nb >= 16)
-		ft_puthex(nb / 16, uppercase, count);
+		ft_putptr_hex(nb / 16, count);
 	if (*count == -1)
 		return ;
-	ft_putchar(hex_base[nb % 16], count);
+	ft_putchar(base[nb % 16], count);
 }
 
 void	ft_putptr(void *ptr, int *count)
@@ -42,5 +39,5 @@ void	ft_putptr(void *ptr, int *count)
 	}
 	addr = (unsigned long long)ptr;
 	ft_putstr("0x", count);
-	ft_puthex(addr, 0, count);
+	ft_putptr_hex(addr, count);
 }
